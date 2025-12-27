@@ -6,7 +6,12 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron . --enable-logging",
-    "package": "electron-builder"
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:mas": "electron-builder --mac mas",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "rebuild": "electron-rebuild"
   },
   "keywords": [
     "productivity",
@@ -22,13 +27,58 @@
     "appId": "com.smartworktracker.app",
     "productName": "Smart Work Tracker",
     "mac": {
-      "identity": null,
       "category": "public.app-category.productivity",
-      "target": "dir",
-      "files": [
-        "**/*",
-        ".env"
-      ]
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "mas",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "build/icon.icns",
+      "darkModeSupport": true,
+      "entitlements": "build-resources/entitlements.mac.plist",
+      "entitlementsInherit": "build-resources/entitlements.mac.inherit.plist",
+      "gatekeeperAssess": false,
+      "hardenedRuntime": true
+    },
+    "mas": {
+      "type": "distribution",
+      "hardenedRuntime": true,
+      "entitlements": "build-resources/entitlements.mac.plist",
+      "entitlementsInherit": "build-resources/entitlements.mac.inherit.plist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "files": [
+      "**/*",
+      "!test-cases/**/*",
+      "!docs/**/*",
+      "!*.md",
+      "!.gitignore",
+      "!.DS_Store"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
     }
   },
   "dependencies": {
