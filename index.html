@@ -2,212 +2,216 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Theo Dõi Năng Suất Làm Việc</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Work Tracker - Privacy-focused productivity tracking app">
+    <title>Smart Work Tracker - Documentation & Testing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .card-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .features {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #f1f5f9;
+        }
+
+        .features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .features li {
+            padding: 0.75rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 0.5rem;
+            color: #cbd5e1;
+        }
+
+        .features li::before {
+            content: '✓ ';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
-        <h1>
-          <svg class="icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-          </svg>
-          Theo Dõi Năng Suất Làm Việc
-        </h1>
-        <p class="subtitle">Phân tích năng suất với sự bảo mật tối đa</p>
-      </div>
-      <div class="permission-status" id="permissionStatus">
-        <span class="status-indicator" id="statusIndicator"></span>
-        <span id="statusText">Đang kiểm tra quyền truy cập...</span>
-      </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Control Panel -->
-      <section class="card control-panel">
-        <h2>Điều Khiển Theo Dõi</h2>
-        <div class="button-group">
-          <button id="startBtn" class="btn btn-primary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-            Bắt Đầu Theo Dõi
-          </button>
-          <button id="stopBtn" class="btn btn-secondary" disabled>
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="6" y="6" width="12" height="12" />
-            </svg>
-            Dừng Theo Dõi
-          </button>
-          <button id="resetBtn" class="btn btn-outline">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-              <path d="M21 3v5h-5" />
-            </svg>
-            Đặt Lại
-          </button>
-          <button id="sampleBtn" class="btn btn-accent">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-              <line x1="12" y1="22.08" x2="12" y2="12" />
-            </svg>
-            Tạo Dữ Liệu Mẫu
-          </button>
-        </div>
-        <div class="tracking-status" id="trackingStatus">
-          <span class="status-badge">Chờ</span>
-          <div id="currentAppName" class="current-app-name" style="margin-top: 10px; color: #94a3b8; font-size: 0.9em;">
-          </div>
-        </div>
-      </section>
-      </section>
-
-      <!-- App Allowlist Settings -->
-      <section class="card app-settings">
-        <h2>Ứng Dụng Theo Dõi</h2>
-        <div class="app-list" id="appList">
-          <label class="app-checkbox">
-            <input type="checkbox" name="app" value="Cursor" checked disabled> Cursor
-          </label>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📊</div>
+            <h1>Smart Work Tracker</h1>
+            <p class="subtitle">Privacy-focused productivity tracking with AI insights</p>
         </div>
 
+        <div class="cards">
+            <a href="docs/index.html" class="card">
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">Documentation</h3>
+                <p class="card-description">
+                    Comprehensive documentation including features, installation guide, usage instructions, API docs,
+                    and FAQ.
+                </p>
+            </a>
 
-      </section>
-      <!-- Statistics Dashboard -->
-      <section class="stats-grid">
-        <div class="stat-card stat-primary">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-            </svg>
-          </div>
-          <div class="stat-content">
-            <div class="stat-label">Sự Kiện Chuột</div>
-            <div class="stat-value" id="mouseCount">0</div>
-          </div>
+            <a href="test-cases/index.html" class="card">
+                <div class="card-icon">🧪</div>
+                <h3 class="card-title">Test Cases</h3>
+                <p class="card-description">
+                    Interactive test cases dashboard with 20 detailed manual test scenarios for quality assurance.
+                </p>
+            </a>
         </div>
 
-        <div class="stat-card stat-success">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10" />
-            </svg>
-          </div>
-          <div class="stat-content">
-            <div class="stat-label">Sự Kiện Bàn Phím</div>
-            <div class="stat-value" id="keyboardCount">0</div>
-          </div>
+        <div class="features">
+            <h2>✨ Key Features</h2>
+            <ul>
+                <li>Privacy-first activity tracking</li>
+                <li>AI-powered productivity insights</li>
+                <li>Real-time activity monitoring</li>
+                <li>Idle time detection</li>
+                <li>Hourly productivity charts</li>
+                <li>Cross-platform support (macOS, Windows, Linux)</li>
+                <li>No data persistence for privacy</li>
+                <li>OpenAI integration for smart analysis</li>
+            </ul>
         </div>
 
-        <div class="stat-card stat-info">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-          </div>
-          <div class="stat-content">
-            <div class="stat-label">Thời Gian Hoạt Động</div>
-            <div class="stat-value" id="activeTime">0m</div>
-          </div>
+        <div class="footer">
+            <p>Built with ❤️ using Electron, Node.js, and Chart.js</p>
+            <p>
+                <a href="https://github.com/yourusername/smart-work-tracker" target="_blank">View on GitHub</a>
+            </p>
         </div>
-
-        <div class="stat-card stat-warning">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-            </svg>
-          </div>
-          <div class="stat-content">
-            <div class="stat-label">Thời Gian Nghỉ</div>
-            <div class="stat-value" id="idleTime">0m</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Activity Chart -->
-      <section class="card chart-container">
-        <h2>Biểu Đồ Hoạt Động</h2>
-        <canvas id="activityChart"></canvas>
-      </section>
-
-      <!-- AI Analysis Section -->
-      <section class="card ai-section">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path
-              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
-          Phân Tích Năng Suất Bằng AI
-        </h2>
-        <p class="ai-description">
-          Nhận thông tin chi tiết về mô hình làm việc, mức độ năng suất và các đề xuất cá nhân hóa từ AI.
-        </p>
-        <button id="analyzeBtn" class="btn btn-ai">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-          </svg>
-          Phân Tích Năng Suất Với AI
-        </button>
-        <div id="aiInsights" class="ai-insights hidden">
-          <div class="insights-header">
-            <h3>Thông Tin Năng Suất Của Bạn</h3>
-            <span class="insights-timestamp" id="insightsTimestamp"></span>
-          </div>
-          <div id="insightsContent" class="insights-content"></div>
-        </div>
-        <div id="aiLoading" class="ai-loading hidden">
-          <div class="spinner"></div>
-          <p>Đang phân tích mô hình làm việc của bạn...</p>
-        </div>
-      </section>
-
-      <!-- Privacy Notice -->
-      <section class="card privacy-notice">
-        <h3>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-          </svg>
-          Quyền Riêng Tư & Đạo Đức
-        </h3>
-        <p>
-          <strong>Ứng dụng này tôn trọng quyền riêng tư của bạn.</strong> Chúng tôi chỉ theo dõi số lượng hoạt động (di
-          chuyển chuột và nhấn phím),
-          không theo dõi nội dung thực tế. Không có phím bấm, tọa độ chuột hoặc nội dung màn hình được ghi lại hoặc
-          truyền đi.
-          Tất cả dữ liệu được lưu trên thiết bị của bạn. Công cụ này được thiết kế để tối ưu hóa năng suất cá nhân,
-          không phải giám sát.
-        </p>
-        <ul class="privacy-list">
-          <li>✅ Đếm di chuyển chuột (không lưu tọa độ)</li>
-          <li>✅ Đếm sự kiện bàn phím (không ghi phím)</li>
-          <li>✅ Theo dõi thời gian hoạt động và nghỉ</li>
-          <li>❌ Không ghi lại phím bấm</li>
-          <li>❌ Không quay màn hình</li>
-          <li>❌ Không giám sát ứng dụng</li>
-        </ul>
-      </section>
-    </main>
-  </div>
-
-  <script src="renderer.js"></script>
+    </div>
 </body>
 
 </html>
