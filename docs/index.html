@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Work Tracker - Ứng dụng theo dõi và phân tích năng suất làm việc với AI">
+    <title>Smart Work Tracker - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-icon">📊</div>
+                <span class="brand-name">Smart Work Tracker</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Trang Chủ</a></li>
+                <li><a href="#features" class="nav-link">Tính Năng</a></li>
+                <li><a href="#installation" class="nav-link">Cài Đặt</a></li>
+                <li><a href="#usage" class="nav-link">Hướng Dẫn</a></li>
+                <li><a href="#api" class="nav-link">API</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    <span>Phiên bản 1.0.0</span>
+                </div>
+                <h1 class="hero-title">
+                    Tối Ưu Năng Suất<br>
+                    <span class="gradient-text">Với Sức Mạnh AI</span>
+                </h1>
+                <p class="hero-description">
+                    Ứng dụng desktop macOS theo dõi và phân tích năng suất làm việc một cách thông minh,
+                    bảo mật tuyệt đối với AI insights được cá nhân hóa.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">
+                        <span>Bắt Đầu Ngay</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <span>Tìm Hiểu Thêm</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Bảo Mật</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">AI</div>
+                        <div class="stat-label">Phân Tích</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Giám Sát</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tính Năng Nổi Bật</h2>
+                <p class="section-description">
+                    Mọi thứ bạn cần để theo dõi và tối ưu hóa năng suất làm việc
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Theo Dõi Thời Gian Thực</h3>
+                    <p class="feature-description">
+                        Giám sát hoạt động làm việc của bạn theo thời gian thực với dashboard trực quan và dễ hiểu.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 16V8C21 6.9 20.1 6 19 6H5C3.9 6 3 6.9 3 8V16C3 17.1 3.9 18 5 18H19C20.1 18 21 17.1 21 16Z"
+                                stroke="white" stroke-width="2" />
+                            <path
+                                d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z"
+                                stroke="white" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Phân Tích AI</h3>
+                    <p class="feature-description">
+                        Nhận insights thông minh về năng suất, giờ làm việc hiệu quả và đề xuất cá nhân hóa.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                stroke="white" stroke-width="2" />
+                            <path d="M12 6V12L16 14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Bảo Mật Tuyệt Đối</h3>
+                    <p class="feature-description">
+                        Chỉ theo dõi số lượng hoạt động, không ghi lại nội dung phím bấm hay tọa độ chuột.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3Z"
+                                stroke="white" stroke-width="2" />
+                            <path d="M3 9H22" stroke="white" stroke-width="2" />
+                            <path d="M9 21V9" stroke="white" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Biểu Đồ Trực Quan</h3>
+                    <p class="feature-description">
+                        Xem hoạt động của bạn qua biểu đồ đẹp mắt, dễ hiểu với Chart.js.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Hiệu Suất Cao</h3>
+                    <p class="feature-description">
+                        Tối ưu hóa CPU, chỉ theo dõi khi cần thiết với throttling thông minh.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Cá Nhân Hóa</h3>
+                    <p class="feature-description">
+                        Nhận đề xuất và phân tích được tùy chỉnh dựa trên thói quen làm việc của bạn.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="installation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hướng Dẫn Cài Đặt</h2>
+                <p class="section-description">
+                    Chỉ cần 3 bước đơn giản để bắt đầu
+                </p>
+            </div>
+            <div class="installation-steps">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Cài Đặt Dependencies</h3>
+                    <p class="step-description">Clone repository và cài đặt các package cần thiết</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">bash</span>
+                            <button class="copy-btn" data-code="cd smart-work-tracker&#10;npm install">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M8 4V16C8 17.1046 8.89543 18 10 18H18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.6569 3.11612C16.2842 2.75073 15.7873 2.54297 15.2687 2.54297H10C8.89543 2.54297 8 3.43841 8 4.54297V4Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path
+                                        d="M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8"
+                                        stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                        <pre><code>cd smart-work-tracker
+npm install</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Cấu Hình OpenAI (Tùy Chọn)</h3>
+                    <p class="step-description">Thêm API key để sử dụng phân tích AI</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">bash</span>
+                            <button class="copy-btn" data-code="OPENAI_API_KEY=sk-proj-your-key-here">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M8 4V16C8 17.1046 8.89543 18 10 18H18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.6569 3.11612C16.2842 2.75073 15.7873 2.54297 15.2687 2.54297H10C8.89543 2.54297 8 3.43841 8 4.54297V4Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path
+                                        d="M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8"
+                                        stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                        <pre><code>OPENAI_API_KEY=sk-proj-your-key-here</code></pre>
+                    </div>
+                    <div class="info-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <span>Lấy API key tại <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI
+                                Platform</a></span>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Chạy Ứng Dụng</h3>
+                    <p class="step-description">Khởi động app và cấp quyền Accessibility</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">bash</span>
+                            <button class="copy-btn" data-code="npm start">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M8 4V16C8 17.1046 8.89543 18 10 18H18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.6569 3.11612C16.2842 2.75073 15.7873 2.54297 15.2687 2.54297H10C8.89543 2.54297 8 3.43841 8 4.54297V4Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path
+                                        d="M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8"
+                                        stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                        <pre><code>npm start</code></pre>
+                    </div>
+                    <div class="warning-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M10.29 3.86L1.82 18C1.64537 18.3024 1.55296 18.6453 1.55199 18.9945C1.55101 19.3437 1.64151 19.6871 1.81445 19.9905C1.98738 20.2939 2.23675 20.5467 2.53773 20.7239C2.83871 20.9011 3.18082 20.9962 3.53 21H20.47C20.8192 20.9962 21.1613 20.9011 21.4623 20.7239C21.7633 20.5467 22.0126 20.2939 22.1856 19.9905C22.3585 19.6871 22.449 19.3437 22.448 18.9945C22.447 18.6453 22.3546 18.3024 22.18 18L13.71 3.86C13.5317 3.56611 13.2807 3.32312 12.9812 3.15448C12.6817 2.98585 12.3437 2.89725 12 2.89725C11.6563 2.89725 11.3183 2.98585 11.0188 3.15448C10.7193 3.32312 10.4683 3.56611 10.29 3.86Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 9V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 17H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Cần cấp quyền Accessibility trong System Preferences → Security & Privacy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section id="usage" class="usage-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hướng Dẫn Sử Dụng</h2>
+                <p class="section-description">
+                    Tận dụng tối đa Smart Work Tracker
+                </p>
+            </div>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <div class="usage-icon">🚀</div>
+                    <h3>Bắt Đầu Theo Dõi</h3>
+                    <p>Click nút "Bắt Đầu Theo Dõi" để bắt đầu monitor hoạt động của bạn. App sẽ theo dõi số lượng di
+                        chuyển chuột và sự kiện bàn phím.</p>
+                    <div class="usage-tip">
+                        <strong>Mẹo:</strong> Đảm bảo đã cấp quyền Accessibility trước khi bắt đầu
+                    </div>
+                </div>
+
+                <div class="usage-card">
+                    <div class="usage-icon">📊</div>
+                    <h3>Xem Thống Kê</h3>
+                    <p>Dashboard hiển thị real-time các metrics quan trọng: số sự kiện chuột/bàn phím, thời gian
+                        active/idle, và biểu đồ hoạt động theo giờ.</p>
+                    <div class="usage-tip">
+                        <strong>Mẹo:</strong> Biểu đồ cập nhật tự động mỗi giây
+                    </div>
+                </div>
+
+                <div class="usage-card">
+                    <div class="usage-icon">🤖</div>
+                    <h3>Phân Tích AI</h3>
+                    <p>Click "Phân Tích Năng Suất Với AI" để nhận insights chi tiết về productivity score, peak hours,
+                        work patterns và recommendations.</p>
+                    <div class="usage-tip">
+                        <strong>Mẹo:</strong> Cần ít nhất 1 giờ dữ liệu để phân tích chính xác
+                    </div>
+                </div>
+
+                <div class="usage-card">
+                    <div class="usage-icon">🎲</div>
+                    <h3>Dữ Liệu Mẫu</h3>
+                    <p>Sử dụng "Tạo Dữ Liệu Mẫu" để test tính năng AI analysis với dữ liệu giả lập 8 giờ làm việc.</p>
+                    <div class="usage-tip">
+                        <strong>Mẹo:</strong> Hoàn hảo để demo hoặc test app
+                    </div>
+                </div>
+
+                <div class="usage-card">
+                    <div class="usage-icon">🔄</div>
+                    <h3>Reset Dữ Liệu</h3>
+                    <p>Click "Reset" để xóa toàn bộ dữ liệu tracking và bắt đầu lại từ đầu. Dữ liệu không thể khôi phục
+                        sau khi reset.</p>
+                    <div class="usage-tip">
+                        <strong>Mẹo:</strong> Dữ liệu tự động reset khi đóng app
+                    </div>
+                </div>
+
+                <div class="usage-card">
+                    <div class="usage-icon">⏸️</div>
+                    <h3>Dừng Theo Dõi</h3>
+                    <p>Click "Dừng Theo Dõi" khi muốn tạm ngưng. Dữ liệu đã thu thập sẽ được giữ nguyên cho đến khi bạn
+                        reset hoặc đóng app.</p>
+                    <div class="usage-tip">
+                        <strong>Mẹo:</strong> Có thể tiếp tục tracking bất cứ lúc nào
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Documentation Section -->
+    <section id="api" class="api-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">API Documentation</h2>
+                <p class="section-description">
+                    Tích hợp AI services vào ứng dụng
+                </p>
+            </div>
+
+            <div class="api-content">
+                <div class="api-sidebar">
+                    <div class="api-nav">
+                        <a href="#api-overview" class="api-nav-item active">Overview</a>
+                        <a href="#api-openai" class="api-nav-item">OpenAI GPT</a>
+                        <a href="#api-config" class="api-nav-item">Configuration</a>
+                        <a href="#api-data" class="api-nav-item">Data Structure</a>
+                        <a href="#api-privacy" class="api-nav-item">Privacy</a>
+                    </div>
+                </div>
+
+                <div class="api-main">
+                    <div id="api-overview" class="api-section-content">
+                        <h3>Overview</h3>
+                        <p>Smart Work Tracker hỗ trợ tích hợp với các AI services để phân tích năng suất làm việc. Hiện
+                            tại app sử dụng thuật toán local, nhưng bạn có thể dễ dàng tích hợp OpenAI GPT.</p>
+
+                        <div class="api-features">
+                            <div class="api-feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.7088 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Dễ dàng tích hợp</span>
+                            </div>
+                            <div class="api-feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <span>Bảo mật dữ liệu</span>
+                            </div>
+                            <div class="api-feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Chi phí thấp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="api-openai" class="api-section-content">
+                        <h3>OpenAI GPT Integration</h3>
+                        <p>Tích hợp OpenAI GPT để nhận phân tích AI chi tiết và cá nhân hóa.</p>
+
+                        <h4>Setup</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">javascript</span>
+                                <button class="copy-btn"
+                                    data-code="const config = {&#10;  OPENAI_API_KEY: 'sk-proj-your-key-here',&#10;  OPENAI_MODEL: 'gpt-4o-mini',&#10;  OPENAI_MAX_TOKENS: 1000,&#10;  OPENAI_TEMPERATURE: 0.7&#10;};">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M8 4V16C8 17.1046 8.89543 18 10 18H18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.6569 3.11612C16.2842 2.75073 15.7873 2.54297 15.2687 2.54297H10C8.89543 2.54297 8 3.43841 8 4.54297V4Z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <path
+                                            d="M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8"
+                                            stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <pre><code>const config = {
+  OPENAI_API_KEY: 'sk-proj-your-key-here',
+  OPENAI_MODEL: 'gpt-4o-mini',
+  OPENAI_MAX_TOKENS: 1000,
+  OPENAI_TEMPERATURE: 0.7
+};</code></pre>
+                        </div>
+
+                        <h4>Cost Estimation</h4>
+                        <div class="cost-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Input</th>
+                                        <th>Output</th>
+                                        <th>Per Analysis</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>gpt-4o-mini</code></td>
+                                        <td>$0.15/1M tokens</td>
+                                        <td>$0.60/1M tokens</td>
+                                        <td>~$0.001-0.002</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gpt-4o</code></td>
+                                        <td>$2.50/1M tokens</td>
+                                        <td>$10.00/1M tokens</td>
+                                        <td>~$0.02-0.03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="api-config" class="api-section-content">
+                        <h3>Configuration Options</h3>
+                        <p>Tùy chỉnh cấu hình AI trong file <code>config.js</code>:</p>
+
+                        <div class="config-options">
+                            <div class="config-option">
+                                <div class="config-name">OPENAI_API_KEY</div>
+                                <div class="config-type">string</div>
+                                <div class="config-desc">API key từ OpenAI Platform</div>
+                            </div>
+                            <div class="config-option">
+                                <div class="config-name">OPENAI_MODEL</div>
+                                <div class="config-type">string</div>
+                                <div class="config-desc">Model sử dụng (gpt-4o-mini, gpt-4o, gpt-4-turbo)</div>
+                            </div>
+                            <div class="config-option">
+                                <div class="config-name">OPENAI_MAX_TOKENS</div>
+                                <div class="config-type">number</div>
+                                <div class="config-desc">Độ dài response tối đa (khuyến nghị: 1000)</div>
+                            </div>
+                            <div class="config-option">
+                                <div class="config-name">OPENAI_TEMPERATURE</div>
+                                <div class="config-type">number (0-1)</div>
+                                <div class="config-desc">Độ sáng tạo của AI (0.7 = cân bằng)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="api-data" class="api-section-content">
+                        <h3>Data Structure</h3>
+                        <p>Cấu trúc dữ liệu được gửi đến AI API:</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">json</span>
+                                <button class="copy-btn"
+                                    data-code='{&#10;  "totalMouseEvents": 15420,&#10;  "totalKeyboardEvents": 8750,&#10;  "totalActiveTime": 25200,&#10;  "totalIdleTime": 3600,&#10;  "hourlyData": [...]&#10;}'>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M8 4V16C8 17.1046 8.89543 18 10 18H18C19.1046 18 20 17.1046 20 16V7.24162C20 6.7034 19.7831 6.18789 19.3982 5.81161L16.6569 3.11612C16.2842 2.75073 15.7873 2.54297 15.2687 2.54297H10C8.89543 2.54297 8 3.43841 8 4.54297V4Z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <path
+                                            d="M16 18V20C16 21.1046 15.1046 22 14 22H6C4.89543 22 4 21.1046 4 20V9C4 7.89543 4.89543 7 6 7H8"
+                                            stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <pre><code>{
+  "totalMouseEvents": 15420,
+  "totalKeyboardEvents": 8750,
+  "totalActiveTime": 25200,
+  "totalIdleTime": 3600,
+  "hourlyData": [
+    {
+      "hour": 9,
+      "mouseEvents": 1850,
+      "keyboardEvents": 1200,
+      "activeTime": 3400
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div id="api-privacy" class="api-section-content">
+                        <h3>Privacy & Security</h3>
+                        <p>Smart Work Tracker được thiết kế với privacy-first approach:</p>
+
+                        <div class="privacy-grid">
+                            <div class="privacy-item privacy-good">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.7088 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <div>
+                                    <strong>Chỉ gửi thống kê</strong>
+                                    <p>Chỉ số lượng events, không có nội dung</p>
+                                </div>
+                            </div>
+                            <div class="privacy-item privacy-good">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.7088 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <div>
+                                    <strong>Không lưu trữ</strong>
+                                    <p>Dữ liệu chỉ tồn tại trong session</p>
+                                </div>
+                            </div>
+                            <div class="privacy-item privacy-bad">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                    <path d="M15 9L9 15M9 9L15 15" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <div>
+                                    <strong>Không theo dõi nội dung</strong>
+                                    <p>Không ghi phím bấm hay tọa độ chuột</p>
+                                </div>
+                            </div>
+                            <div class="privacy-item privacy-bad">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                    <path d="M15 9L9 15M9 9L15 15" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <div>
+                                    <strong>Không screen capture</strong>
+                                    <p>Không chụp màn hình hay ghi hình</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+                <p class="section-description">
+                    Giải đáp các thắc mắc phổ biến
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>App có theo dõi nội dung tôi gõ không?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Không!</strong> App chỉ đếm số lượng sự kiện bàn phím, không ghi lại nội dung phím
+                            bấm. Tương tự với chuột, chỉ đếm số lần di chuyển, không lưu tọa độ. Đây là thiết kế
+                            privacy-first từ đầu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Dữ liệu có được lưu trữ ở đâu không?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Dữ liệu chỉ tồn tại trong RAM khi app đang chạy. Khi bạn đóng app, mọi dữ liệu sẽ bị xóa hoàn
+                            toàn. Không có database, không có file lưu trữ, không có cloud sync.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Tại sao cần quyền Accessibility?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>macOS yêu cầu quyền Accessibility để app có thể theo dõi keyboard events system-wide. Đây là
+                            yêu cầu bảo mật của macOS, không phải lỗi của app. Bạn có thể thu hồi quyền này bất cứ lúc
+                            nào trong System Preferences.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Chi phí sử dụng OpenAI API là bao nhiêu?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Với model mặc định <code>gpt-4o-mini</code>, mỗi lần phân tích chỉ tốn khoảng
+                            <strong>$0.001-0.002</strong> (khoảng 25-50 VNĐ). Nếu bạn phân tích 10 lần/ngày, chi phí chỉ
+                            khoảng $0.60/tháng (~15,000 VNĐ).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Có thể sử dụng mà không cần OpenAI API không?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Có!</strong> App có thuật toán phân tích local không cần API. Khi không có API key
+                            hoặc API lỗi, app tự động fallback sang phân tích local. Bạn vẫn nhận được productivity
+                            score, peak hours và recommendations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>App có hoạt động trên Windows/Linux không?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Hiện tại app được tối ưu cho <strong>macOS</strong>. Tuy nhiên, vì sử dụng Electron và
+                            uiohook-napi (cross-platform), bạn có thể adapt code để chạy trên Windows/Linux với một số
+                            điều chỉnh nhỏ.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Làm sao để export dữ liệu?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Phiên bản hiện tại chưa hỗ trợ export. Đây là một tính năng trong roadmap tương lai. Bạn có
+                            thể tự implement bằng cách thêm nút export và sử dụng <code>JSON.stringify()</code> để lưu
+                            dữ liệu ra file CSV hoặc JSON.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>App có ảnh hưởng đến hiệu năng máy không?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Không!</strong> App được tối ưu với throttling cho mouse events (100ms) và chỉ update
+                            UI mỗi giây. CPU usage rất thấp (~1-2%). Memory footprint nhỏ vì không lưu trữ lịch sử dài.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-icon">📊</div>
+                        <span class="brand-name">Smart Work Tracker</span>
+                    </div>
+                    <p class="footer-description">
+                        Ứng dụng theo dõi và phân tích năng suất làm việc với AI,
+                        được thiết kế với privacy-first approach.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Documentation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#installation">Cài Đặt</a></li>
+                        <li><a href="#usage">Hướng Dẫn</a></li>
+                        <li><a href="#api">API Docs</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../README.md">README</a></li>
+                        <li><a href="../QUICKSTART.md">Quick Start</a></li>
+                        <li><a href="../DEPLOYMENT.md">Deployment</a></li>
+                        <li><a href="../PROJECT_SUMMARY.md">Project Summary</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com">GitHub</a></li>
+                        <li><a href="https://platform.openai.com">OpenAI</a></li>
+                        <li><a href="https://electronjs.org">Electron</a></li>
+                        <li><a href="https://chartjs.org">Chart.js</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Smart Work Tracker. Licensed under MIT License.</p>
+                <p>Được tạo với ❤️ cho developers muốn tối ưu hóa năng suất làm việc</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
